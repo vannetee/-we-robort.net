@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Region and Language Selection</title>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f9f9f9;
+    }
+    .container {
+      display: flex;
+      gap: 50px;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      max-width: 90%;
+    }
+    .region {
+      width: 200px;
+    }
+    .region h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+    .country {
+      font-size: 14px;
+      margin-bottom: 5px;
+      color: #555;
+      cursor: pointer;
+      padding: 5px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+    .country:hover {
+      background-color: #f0f0f0;
+    }
+    .language {
+      font-size: 12px;
+      color: #888;
+      margin-left: 10px;
+    }
+    .selected {
+      background-color: #d0e8ff;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- North America Section -->
+    <div class="region">
+      <h3>North America</h3>
+      <div class="country" onclick="selectCountry(this)">United States <span class="language">English</span></div>
+      <div class="country" onclick="selectCountry(this)">Canada <span class="language">English</span> <span class="language">Français</span></div>
+      <div class="country" onclick="selectCountry(this)">México <span class="language">Español</span></div>
+      <div class="country" onclick="selectCountry(this)">Puerto Rico <span class="language">English</span> <span class="language">Español</span></div>
+    </div>
+    
+    <!-- Asia Pacific Section -->
+    <div class="region">
+      <h3>Asia Pacific</h3>
+      <div class="country" onclick="selectCountry(this)">中国大陆 <span class="language">简体中文</span></div>
+      <div class="country" onclick="selectCountry(this)">Hong Kong <span class="language">繁體中文</span> <span class="language">English</span></div>
+      <div class="country" onclick="selectCountry(this)">Macau <span class="language">繁體中文</span> <span class="language">English</span></div>
+      <div class="country" onclick="selectCountry(this)">台湾 <span class="language">繁體中文</span></div>
+      <div class="country" onclick="selectCountry(this)">日本 <span class="language">日本語</span></div>
+    </div>
+    
+    <!-- Europe Section -->
+    <div class="region">
+      <h3>Europe</h3>
+      <div class="country" onclick="selectCountry(this)">Belgium <span class="language">Nederlands</span> <span class="language">Français</span></div>
+      <div class="country" onclick="selectCountry(this)">Česká republika <span class="language">Čeština</span></div>
+      <div class="country" onclick="selectCountry(this)">Danmark <span class="language">Dansk</span></div>
+      <div class="country" onclick="selectCountry(this)">Deutschland <span class="language">Deutsch</span></div>
+      <div class="country" onclick="selectCountry(this)">Ελλάδα <span class="language">Ελληνικά</span></div>
+      <div class="country" onclick="selectCountry(this)">España <span class="language">Español</span></div>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript function to handle country selection
+    function selectCountry(element) {
+      // Remove 'selected' class from all countries
+      const countries = document.querySelectorAll('.country');
+      countries.forEach(country => country.classList.remove('selected'));
+
+      // Add 'selected' class to the clicked country
+      element.classList.add('selected');
+    }
+  </script>
+
+</body>
+</html>
